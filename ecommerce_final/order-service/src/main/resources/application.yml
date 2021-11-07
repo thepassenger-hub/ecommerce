@@ -1,0 +1,62 @@
+
+spring:
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    connect-timeout: 6000
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: eglrgroup9@gmail.com
+    password: z5i59QRJLwpAyxT
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        debug: false
+  data:
+    mongodb:
+      host: localhost
+      username: orderservice
+      password: orderservice
+      authentication-database: admin
+      database: orderservice
+
+  security:
+    user:
+      name: order-service
+      password: order-service
+  kafka:
+    bootstrap-servers: "localhost:29092"
+    retryDelay: 5000
+    numberOfRetries: 5
+
+  application:
+    name: order-service
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 5
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+
+application:
+  admin:
+    email: eglrgroup9@gmail.com
+  jwt:
+    jwtSecret: that_depends_a_good_deal_on_where_you_want_to_get_to_then_it_doesnt_much_matter_which_way_you_go
+    jwtExpirationMs: 1800000
+
+#logging:
+#  file:
+#    name: ./ecommerce_final/order-service/logs/order-service.log
+#  level:
+#    root: DEBUG
